@@ -42,14 +42,6 @@ resource "aws_s3_bucket_public_access_block" "terraform_s3_bucket_public_access_
 }
 
 
-# resource "aws_s3_bucket_acl" "terraform_s3_bucket_acl" {
-#   depends_on = [aws_s3_bucket_ownership_controls.terraform_s3_bucket_ownership_controls]
-
-#   bucket = aws_s3_bucket.terraform_s3_bucket.id
-#   acl    = "private"
-# }
-
-
 resource "aws_s3_bucket_acl" "terraform_s3_bucket_acl_public" {
   depends_on = [
     aws_s3_bucket_ownership_controls.terraform_s3_bucket_ownership_controls,
